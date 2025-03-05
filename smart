@@ -1,0 +1,25 @@
+String data[] = {"sumin", "26" , "32", "60" , "80"}; // 품종 , 최저온도 , 최고온도 , 최저습도 , 최고습도
+int tem = 23;  // 나중에 아두이노 에서 측정됨 (온도)
+int hu = 58;   // 나중에 아두이노 에서 측정됨 (습도)
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+  Serial.print("name : ");
+  Serial.println(data[0]);
+  Serial.print("온도 : ");
+  Serial.println(tem);
+  Serial.print("습도 : ");
+  Serial.println(hu);
+ // tem 가 최저 온도 보다 낮을 때 , 온돌 on
+ if (tem < data[1].toInt() ){
+  Serial.println("온돌 on");
+ }
+ // tem 가 최고 온도 보다 높을 때  , 온돌 off , 선풍기 on
+
+ // hu 최저습도 낮을 때  , 가습기 on
+
+ // hu 최고습도 보다 높을 때 , 가습기 off
+
+}
+
